@@ -3,7 +3,7 @@
 Untuk mengikuti latihan ini, Anda bisa menggunakan sistem operasi Windows, Linux, ataupun macOS. Namun, pastikan beberapa tools berikut sudah terinstal di komputer Anda.
 - [Git] (https://git-scm.com/downloads) 
 - [Docker] (https://www.docker.com/get-started/)
-- Visual Studio Code (https://code.visualstudio.com/)
+- [Visual Studio Code] (https://code.visualstudio.com/)
 
 Jika semua tools tersebut sudah terpasang, simak tahapan proses yang akan kita lakukan di latihan berikut ini.
 
@@ -50,6 +50,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   https://download.docker.com/linux/debian \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
+RUN curl https://cli-assets.heroku.com/install.sh | sh
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean:1.25.5 docker-workflow:1.28"
 ```
